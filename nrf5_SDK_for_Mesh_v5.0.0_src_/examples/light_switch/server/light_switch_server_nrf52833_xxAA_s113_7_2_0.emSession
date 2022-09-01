@@ -1,0 +1,56 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;Access"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;Application"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;Bearer"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;Core"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;GATT"/>
+  <ProjectSessionItem path="light_switch_server_nrf52833_xxAA_s113_7.2.0;light_switch_server_nrf52833_xxAA_s113_7.2.0;Generic OnOff Model"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../doc/getting_started/SES.md" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="176" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/src/generic_onoff_server.c" selected="0" top="161" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="light_switch_server_nrf52833_xxAA_s113_7_2_0.emProject" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="357" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="343" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="677" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../mesh/gatt/src/proxy.c" selected="0" top="665" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../mesh/access/src/access_publish.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="416" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../mesh/access/src/access.c" selected="0" top="407" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="937" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../mesh/core/src/transport.c" selected="0" top="917" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="light_switch_server_nrf52833_xxAA_s113_7.2.0" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server" debugSearchPath="" autoConnectCapabilities="3711"/>
+</session>

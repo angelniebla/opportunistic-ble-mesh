@@ -1,0 +1,39 @@
+Output/Release/Obj/nrf_crypto_hmac_pca10056/mbedtls_backend_aes.o: \
+ /mnt/home_tmp/gtec/gitlab/prl/nordic_sdk/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/backend/mbedtls/mbedtls_backend_aes.c \
+ ../../../../../../../components/libraries/util/sdk_common.h \
+ /mnt/external/opt/include/stdint.h /mnt/external/opt/include/stdbool.h \
+ /mnt/external/opt/include/string.h \
+ /mnt/external/opt/include/__crossworks.h ../config/sdk_config.h \
+ ../../../../../../../components/libraries/util/nordic_common.h \
+ ../../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
+ ../../../../../../../components/libraries/util/sdk_os.h \
+ ../../../../../../../components/libraries/util/sdk_errors.h \
+ ../../../../../../../components/softdevice/s140/headers/nrf_error.h \
+ ../../../../../../../components/libraries/util/app_util.h \
+ /mnt/external/opt/include/stddef.h \
+ ../../../../../../../modules/nrfx/mdk/nrf.h \
+ ../../../../../../../modules/nrfx/mdk/nrf52840.h \
+ ../../../../../../../components/toolchain/cmsis/include/core_cm4.h \
+ ../../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
+ ../../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
+ ../../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../../modules/nrfx/mdk/system_nrf52840.h \
+ ../../../../../../../modules/nrfx/mdk/nrf52840_bitfields.h \
+ ../../../../../../../modules/nrfx/mdk/nrf51_to_nrf52840.h \
+ ../../../../../../../modules/nrfx/mdk/nrf52_to_nrf52840.h \
+ ../../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
+ ../../../../../../../components/softdevice/s140/headers/nrf52/nrf_mbr.h \
+ ../../../../../../../components/softdevice/s140/headers/nrf_svc.h \
+ ../../../../../../../components/libraries/util/sdk_macros.h \
+ ../../../../../../../components/libraries/util/nrf_assert.h \
+ ../../../../../../../external/mbedtls/include/mbedtls/md.h \
+ ../../../../../../../external/nrf_tls/mbedtls/nrf_crypto/config/nrf_crypto_mbedtls_config.h \
+ ../../../../../../../external/mbedtls/include/mbedtls/check_config.h \
+ /mnt/external/opt/include/limits.h \
+ ../../../../../../../external/mbedtls/include/mbedtls/aes.h \
+ ../../../../../../../external/mbedtls/include/mbedtls/cipher.h \
+ ../../../../../../../external/mbedtls/include/mbedtls/platform_util.h \
+ ../../../../../../../components/libraries/crypto/nrf_crypto_error.h \
+ ../../../../../../../components/libraries/util/sdk_errors.h \
+ /mnt/home_tmp/gtec/gitlab/prl/nordic_sdk/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/backend/mbedtls/mbedtls_backend_aes.h

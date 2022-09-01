@@ -1,0 +1,19 @@
+Output/Release/Obj/led_softblink_pca10056/nrf_nvic.o: \
+ /mnt/home_tmp/gtec/gitlab/prl/nordic_sdk/nRF5_SDK_17.0.2_d674dde/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c \
+ /mnt/external/opt/include/stdlib.h \
+ /mnt/external/opt/include/__crossworks.h \
+ /mnt/home_tmp/gtec/gitlab/prl/nordic_sdk/nRF5_SDK_17.0.2_d674dde/components/drivers_nrf/nrf_soc_nosd/nrf_soc.h \
+ /mnt/external/opt/include/stdint.h \
+ ../../../../../../modules/nrfx/mdk/nrf.h \
+ ../../../../../../modules/nrfx/mdk/nrf52840.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
+ ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../modules/nrfx/mdk/system_nrf52840.h \
+ ../../../../../../modules/nrfx/mdk/nrf52840_bitfields.h \
+ ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52840.h \
+ ../../../../../../modules/nrfx/mdk/nrf52_to_nrf52840.h \
+ ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
+ /mnt/home_tmp/gtec/gitlab/prl/nordic_sdk/nRF5_SDK_17.0.2_d674dde/components/drivers_nrf/nrf_soc_nosd/nrf_error.h
