@@ -681,7 +681,6 @@ static void gatt_evt_handler(const mesh_gatt_evt_t * p_evt, void * p_context)
 
         case MESH_GATT_EVT_TYPE_TX_COMPLETE:
             __LOG(LOG_SRC_BEARER, LOG_LEVEL_INFO, "TX complete\n");
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "TX complete\n");
 
             if (p_evt->params.tx_complete.pdu_type == MESH_GATT_PDU_TYPE_NETWORK_PDU)
             {

@@ -1,40 +1,42 @@
 build/light_switch_server_nrf52833_xxAA_s113_7.2.0_Debug/obj/app_timer_workaround.o: \
- /home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/external/app_timer/app_timer_workaround.c \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_common.h \
- /opt/include/stdint.h /opt/include/stdbool.h /opt/include/string.h \
- /opt/include/__crossworks.h include/sdk_config.h include/app_config.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nordic_common.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/compiler_abstraction.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_os.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_errors.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_util.h \
- /opt/include/stddef.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52833.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/core_cm4.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_version.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_compiler.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_gcc.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/mpu_armv7.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/system_nrf52833.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52833_bitfields.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52_to_nrf52833.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf51_to_nrf52.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/compiler_abstraction.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf52/nrf_mbr.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_svc.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_macros.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nrf_assert.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/timer/app_timer.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_error.h \
- /opt/include/stdio.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_error_weak.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_util.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nordic_common.h \
+ /mnt/home_tmp/Desktop/tmp_mesh_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/external/app_timer/app_timer_workaround.c \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_common.h \
+ /mnt/external/opt/include/stdint.h /mnt/external/opt/include/stdbool.h \
+ /mnt/external/opt/include/string.h \
+ /mnt/external/opt/include/__crossworks.h include/sdk_config.h \
+ include/app_config.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nordic_common.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/compiler_abstraction.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_os.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_errors.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_util.h \
+ /mnt/external/opt/include/stddef.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52833.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/core_cm4.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_version.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_compiler.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/cmsis_gcc.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/toolchain/cmsis/include/mpu_armv7.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/system_nrf52833.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52833_bitfields.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52_to_nrf52833.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf51_to_nrf52.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/compiler_abstraction.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf52/nrf_mbr.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_svc.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/sdk_macros.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nrf_assert.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/timer/app_timer.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_error.h \
+ /mnt/external/opt/include/stdio.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_error_weak.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/app_util.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/libraries/util/nordic_common.h \
  ../../common/include/mesh_app_utils.h \
  ../../../mesh/core/include/toolchain.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_nvic.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_svc.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error.h \
- /opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error_soc.h
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_nvic.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_svc.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error.h \
+ /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/softdevice/s113/headers/nrf_error_soc.h

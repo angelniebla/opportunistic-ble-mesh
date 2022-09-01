@@ -13,10 +13,8 @@
  <Project>
   <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0"/>
   <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0"/>
-  <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0;Access"/>
   <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0;Application"/>
   <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0;Bearer"/>
-  <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0;Configuration Model"/>
   <ProjectSessionItem path="light_switch_client_nrf52833_xxAA_s113_7.2.0;light_switch_client_nrf52833_xxAA_s113_7.2.0;Generic OnOff Model"/>
  </Project>
  <Register1/>
@@ -43,15 +41,12 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../doc/getting_started/SES.md" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="light_switch_client_nrf52833_xxAA_s113_7_2_0.emProject" selected="0" top="3" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="47" y="117" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="105" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="40" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/vendor/simple_message/src/simple_message_client.c" selected="0" top="181" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="37" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/vendor/simple_message/src/simple_message_server.c" selected="0" top="90" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/models/vendor/simple_message/src/simple_message_server.c" useBinaryEdit="0" left="0" path="../../../models/simple_message/include/simple_message_server.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="182" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/src/generic_onoff_server.c" selected="0" top="168" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="55" useTextEdit="1" openedFrom="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/client/src/main.c" useBinaryEdit="0" left="0" path="../../../models/simple_message/include/simple_message_common.h" selected="0" top="36" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1189" useTextEdit="1" openedFrom="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/client/src/main.c" useBinaryEdit="0" left="0" path="../../../mesh/access/src/access.c" selected="0" top="1171" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="560" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../mesh/core/api/nrf_mesh_config_core.h" selected="0" top="540" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="7" y="137" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="118" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="180" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/src/generic_onoff_server.c" selected="0" top="163" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/simple_message/include/simple_message_client.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="54" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/simple_message/include/simple_message_common.h" selected="0" top="45" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../models/simple_message/include/simple_message_server.h" selected="0" top="69" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="17" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="light_switch_client_nrf52833_xxAA_s113_7_2_0.emProject" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="light_switch_client_nrf52833_xxAA_s113_7.2.0" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/mesh/core/api" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="light_switch_client_nrf52833_xxAA_s113_7.2.0" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/mnt/home_tmp/Desktop/tmp_mesh_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/models/simple_message/include" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

@@ -558,7 +558,7 @@
 
 /** LPN feature */
 #ifndef MESH_FEATURE_LPN_ENABLED
-#define MESH_FEATURE_LPN_ENABLED 1
+#define MESH_FEATURE_LPN_ENABLED 0
 #endif
 
 /**

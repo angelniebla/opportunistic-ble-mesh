@@ -111,40 +111,39 @@ static generic_onoff_client_t m_clients[CLIENT_MODEL_INSTANCE_COUNT];
 static bool                   m_device_provisioned;
 
 //modified
-void send_message (void)
+void send_message (void) 
 {
-    uint32_t status=0; //14
-    uint8_t buffer[5]={0x48,0x65,0x6C,0x6C,0x6F};//,0x48,0x65,0x6C,0x6C,0x6F,0x48,0x65,0x6C,0x6C, //};
-                       // 0x48,0x65,0x6C,0x6C,0x6F,0x48,0x65,0x6C,0x6C,0x6F,0x48,0x65,0x6C,0x6C};
+    uint32_t status=0;
+    uint8_t buffer[5]={0x48,0x65,0x6C,0x6C,0x6F};
     uint8_t length;
     uint16_t address;
     access_message_tx_t msg;
-    length= sizeof(buffer);
-               if (length)
-                {
-                  msg.opcode.opcode = simple_message_OPCODE_SEND; //simple_message_OPCODE_SEND ;
-                  msg.opcode.company_id = 0x0059; // Nordic's company ID
+    length = sizeof(buffer);
 
-                  msg.p_buffer = (const uint8_t *) &buffer[0];
-                  msg.length =length;
+    if (length)
+    {
+      msg.opcode.opcode = simple_message_OPCODE_SEND; //simple_message_OPCODE_SEND ;
+      msg.opcode.company_id = 0x0059; // Nordic's company ID
 
-                  //forget about setting here the dst addr and set instead on nrf mesh app (now dst is 0x0074)
-                  //set this node as LPN MESH_FEATURE_LPN_ENABLED 1 dont forget proper configure server (only prov and bind keys)
+      msg.p_buffer = (const uint8_t *) &buffer[0];
+      msg.length =length;
 
-                  status=access_model_publish(m_clients[0].model_handle, &msg);        //CHANGED TO 0 FROM 3
-                  __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Status : %u \n", status);
+      //forget about setting here the dst addr and set instead on nrf mesh app (now dst is 0x0074)
+      //set this node as LPN MESH_FEATURE_LPN_ENABLED 1, dont forget proper configure server (only prov and bind keys)
 
-                  if (status == NRF_ERROR_INVALID_STATE ||
-                  status == NRF_ERROR_BUSY||status == NRF_ERROR_NO_MEM)
-                   {
-                     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Cannot send. Device is busy.\n");
-                      hal_led_blink_ms(LEDS_MASK, 50, 4);
-                   }
-                   else
-                   {
-                         ERROR_CHECK(status);
-                   }
-                }
+      status = access_model_publish(m_clients[0].model_handle, &msg);        //CHANGED TO 0 FROM 3
+      __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Status : %u \n", status);
+
+      if (status == NRF_ERROR_INVALID_STATE || status == NRF_ERROR_BUSY || status == NRF_ERROR_NO_MEM)
+      {
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Cannot send. Device is busy.\n");
+        hal_led_blink_ms(LEDS_MASK, 50, 4);
+      }
+      else
+      {
+        ERROR_CHECK(status);
+      }
+    }
 }
 
 const generic_onoff_client_callbacks_t client_cbs =
@@ -194,8 +193,7 @@ static void provisioning_complete_cb(void)
 /* This callback is called periodically if model is configured for periodic publishing */
 static void app_gen_onoff_client_publish_interval_cb(access_model_handle_t handle, void * p_self)
 {
-     __LOG(LOG_SRC_APP, LOG_LEVEL_WARN, "Publish periodic message.\n");
-    send_message();
+     __LOG(LOG_SRC_APP, LOG_LEVEL_WARN, "Publish desired message here.\n");
 }
 
 /* Acknowledged transaction status callback, if acknowledged transfer fails, application can
@@ -281,25 +279,25 @@ static void button_event_handler(uint32_t button_number)
     generic_onoff_set_params_t set_params;
     model_transition_t transition_params;
     static uint8_t tid = 0;
-/*
+
     switch(button_number)
     {
         case 1:
         case 3:
-           // set_params.on_off = APP_STATE_ON;
+            set_params.on_off = APP_STATE_ON;
             break;
 
         case 2:
         case 4:
-           // set_params.on_off = APP_STATE_OFF;
+            set_params.on_off = APP_STATE_OFF;
             break;
     }
 
     set_params.tid = tid++;
     transition_params.delay_ms = APP_ONOFF_DELAY_MS;
     transition_params.transition_time_ms = APP_ONOFF_TRANSITION_TIME_MS;
-   // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Sending msg: ONOFF SET %d\n", set_params.on_off);
-*/
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Sending msg: ONOFF SET %d\n", set_params.on_off);
+
     switch (button_number)
     {
         case 1:

@@ -424,7 +424,6 @@ static uint32_t packet_tx(access_model_handle_t handle,
     {
         __LOG(LOG_SRC_ACCESS, LOG_LEVEL_DBG1, "TX: [aop: 0x%04x] \n", p_tx_message->opcode.opcode);
         __LOG_XB(LOG_SRC_ACCESS, LOG_LEVEL_DBG1, "TX: Msg", p_access_payload, access_payload_len);
-        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, "TX: Msg", p_access_payload, access_payload_len);
     }
 
     return status;

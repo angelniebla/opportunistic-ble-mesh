@@ -609,7 +609,6 @@ static uint32_t sar_ack_send(const transport_packet_metadata_t * p_metadata, uin
     if (p_metadata->net.dst.type == NRF_MESH_ADDRESS_TYPE_UNICAST)
     {
         __LOG(LOG_SRC_TRANSPORT, LOG_LEVEL_INFO, "Sending ACK...\n");
-        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Sending ACK... cause is unicast\n");
 
         packet_mesh_trs_control_packet_t packet_buffer;
         memset(&packet_buffer, 0, sizeof(packet_buffer));
@@ -736,10 +735,8 @@ static void sar_rx_ctx_cancel_all(nrf_mesh_sar_session_cancel_reason_t reason)
 #if MESH_FEATURE_LPN_ENABLED
 static void sar_tx_pending_retries_send(void)
 {
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Sending retries\n");
     for (uint32_t i = 0; i < TRANSPORT_SAR_SESSIONS_MAX; i++)
     {
-        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "%i\n", i);
         if (m_trs_sar_sessions[i].session.session_type == TRS_SAR_SESSION_TX &&
             m_trs_sar_sessions[i].timeout_state == SAR_TIMEOUT_STATE_WAIT_POLL_COMPLETE)
         {
@@ -753,13 +750,11 @@ static void mesh_evt_handler(const nrf_mesh_evt_t * p_evt)
     switch (p_evt->type)
     {
         case NRF_MESH_EVT_LPN_FRIEND_POLL_COMPLETE:
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "NRF_MESH_EVT_LPN_FRIEND_POLL_COMPLETE\n");
             sar_rx_ctx_cancel_all(NRF_MESH_SAR_CANCEL_REASON_LPN_RX_NOT_COMPLETE);
             sar_tx_pending_retries_send();
             break;
 
         case NRF_MESH_EVT_FRIENDSHIP_TERMINATED:
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "NRF_MESH_EVT_FRIENDSHIP_TERMINATED\n");
             if (p_evt->params.friendship_terminated.role == NRF_MESH_FRIENDSHIP_ROLE_LPN)
             {
                 sar_rx_ctx_cancel_all(NRF_MESH_SAR_CANCEL_REASON_FRIENDSHIP_TERMINATED);
@@ -770,7 +765,6 @@ static void mesh_evt_handler(const nrf_mesh_evt_t * p_evt)
             break;
 
         case NRF_MESH_EVT_FRIENDSHIP_ESTABLISHED:
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "NRF_MESH_EVT_FRIENDSHIP_ESTABLISHED\n");
             if (p_evt->params.friendship_established.role == NRF_MESH_FRIENDSHIP_ROLE_LPN)
             {
                 sar_rx_ctx_cancel_all(NRF_MESH_SAR_CANCEL_REASON_FRIENDSHIP_ESTABLISHED);
@@ -935,7 +929,6 @@ static void trs_seg_packet_in(const packet_mesh_trs_packet_t * p_packet,
         return;
     }
     __LOG(LOG_SRC_TRANSPORT, LOG_LEVEL_INFO, "Got segment %u\n", p_metadata->segmentation.segment_offset);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Got segment %u\n", p_metadata->segmentation.segment_offset);
 
     /* In a friendship, the Friend shall put segments in its Friend Queue when the message has been
      * fully received/assembled (ref. @tagMeshSp section 3.5.5). If we still have an active RX
@@ -1050,7 +1043,6 @@ static bool test_transport_decrypt(const nrf_mesh_application_secmat_t * p_app_s
         if (mic_passed)
         {
             __LOG(LOG_SRC_TRANSPORT, LOG_LEVEL_INFO, "Message decrypted\n");
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Message decrypted\n");
         }
     }
     return mic_passed;

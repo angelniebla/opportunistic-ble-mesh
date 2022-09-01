@@ -172,16 +172,16 @@ static void handle_get(access_model_handle_t model_handle, const access_message_
 
 //modified
 static void handle_send_status(access_model_handle_t model_handle, const access_message_rx_t * p_rx_msg, void * p_args){
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "ASCII -- Message: %s\n", p_rx_msg->p_data); 
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "ASCII Message: %s\n", p_rx_msg->p_data); 
 }
-//////////////////////////////////////////
+
 static const access_opcode_handler_t m_opcode_handlers[] =
 {
     {ACCESS_OPCODE_SIG(GENERIC_ONOFF_OPCODE_SET), handle_set},
     {ACCESS_OPCODE_SIG(GENERIC_ONOFF_OPCODE_SET_UNACKNOWLEDGED), handle_set},
     {ACCESS_OPCODE_SIG(GENERIC_ONOFF_OPCODE_GET), handle_get},
     {ACCESS_OPCODE_VENDOR(simple_message_OPCODE_SEND,0x0059), handle_send_status}, //modified
-};    // simple_message_OPCODE_SEND
+};
 
 
 /** Interface functions */

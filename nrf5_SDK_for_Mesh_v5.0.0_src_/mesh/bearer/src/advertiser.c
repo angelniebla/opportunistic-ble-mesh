@@ -261,7 +261,7 @@ static inline void set_default_broadcast_configuration(broadcast_t * p_broadcast
 {
     p_broadcast->params.access_address = BEARER_ACCESS_ADDR_DEFAULT;
     p_broadcast->params.radio_config.payload_maxlen = RADIO_CONFIG_ADV_MAX_PAYLOAD_SIZE;
-    p_broadcast->params.radio_config.radio_mode = RADIO_MODE_NRF_62K5BIT; // RADIO_MODE_BLE_1MBIT;
+    p_broadcast->params.radio_config.radio_mode = RADIO_MODE_BLE_1MBIT;
     p_broadcast->params.radio_config.tx_power = RADIO_POWER_NRF_0DBM;
 }
 
