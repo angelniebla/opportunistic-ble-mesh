@@ -76,6 +76,7 @@
 #include "ble_softdevice_support.h"
 #include "app_dtt.h"
 #include "app_scene.h"
+#include "nrf_mesh_serial.h"
 
 /*****************************************************************************
  * Definitions
@@ -359,6 +360,12 @@ static void mesh_init(void)
         default:
             ERROR_CHECK(status);
     }
+
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Enabling ECDH offloading...\n");
+    ERROR_CHECK(mesh_opt_prov_ecdh_offloading_set(true));
+
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Initializing serial interface...\n");
+    ERROR_CHECK(nrf_mesh_serial_init(NULL));
 }
 
 static void initialize(void)
@@ -408,6 +415,9 @@ static void start(void)
     }
 
     mesh_app_uuid_print(nrf_mesh_configure_device_uuid_get());
+
+    // Serial enable
+    ERROR_CHECK(nrf_mesh_serial_enable());
 
     /* NRF_MESH_EVT_ENABLED is triggered in the mesh IRQ context after the stack is fully enabled.
      * This event is used to call Model APIs for establishing bindings and publish a model state information. */

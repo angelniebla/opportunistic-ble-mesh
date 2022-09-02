@@ -1,5 +1,5 @@
 build/light_switch_server_nrf52833_xxAA_s113_7.2.0_Debug/obj/main.o: \
- /mnt/home_tmp/Desktop/tmp_mesh_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server/src/main.c \
+ /mnt/home_tmp/gtec/gitlab/opportunistic/opportunistic-ble-mesh/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server/src/main.c \
  /mnt/external/opt/include/stdint.h /mnt/external/opt/include/string.h \
  /mnt/external/opt/include/__crossworks.h \
  /mnt/home_tmp/gtec/gitlab/orballo-sbcs-bluetooth/nRF5x/nRF5_SDK_17.1.0_ddde560/components/boards/boards.h \
@@ -151,4 +151,6 @@ build/light_switch_server_nrf52833_xxAA_s113_7.2.0_Debug/obj/main.o: \
  ../../../mesh/core/include/fsm.h ../../common/include/app_scene.h \
  ../../common/include/nrf_mesh_config_examples.h \
  ../../common/include/ble_softdevice_support.h \
- ../../common/include/app_dtt.h ../../common/include/app_scene.h
+ ../../common/include/app_dtt.h ../../common/include/app_scene.h \
+ ../../../mesh/serial/api/nrf_mesh_serial.h \
+ /mnt/external/opt/include/limits.h
