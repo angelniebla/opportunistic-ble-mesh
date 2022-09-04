@@ -76,7 +76,6 @@
 #include "ble_softdevice_support.h"
 #include "app_dtt.h"
 #include "app_scene.h"
-#include "nrf_mesh_serial.h"
 
 /*****************************************************************************
  * Definitions
@@ -89,6 +88,12 @@
 /* Controls the MIC size used by the model instance for sending the mesh messages. */
 #define APP_MIC_SIZE                (NRF_MESH_TRANSMIC_SIZE_SMALL)
 
+//////////
+#define UART_TX_BUF_SIZE                256                                         /**< UART TX buffer size. */
+#define UART_RX_BUF_SIZE                256                                         /**< UART RX buffer size. */
+#include "app_uart.h"
+#include "nrf_uart.h"
+//////////
 
 /*****************************************************************************
  * Forward declaration of static functions
@@ -360,16 +365,40 @@ static void mesh_init(void)
         default:
             ERROR_CHECK(status);
     }
+}
 
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Enabling ECDH offloading...\n");
-    ERROR_CHECK(mesh_opt_prov_ecdh_offloading_set(true));
+void uart_event_handle(app_uart_evt_t * p_event)
+{}
+static void uart_init(void)
+{
+    uint32_t                     err_code;
+    app_uart_comm_params_t const comm_params =
+    {
+        .rx_pin_no    = RX_PIN_NUMBER,
+        .tx_pin_no    = TX_PIN_NUMBER,
+        .rts_pin_no   = RTS_PIN_NUMBER,
+        .cts_pin_no   = CTS_PIN_NUMBER,
+        .flow_control = APP_UART_FLOW_CONTROL_DISABLED,
+        .use_parity   = false,
+#if defined (UART_PRESENT)
+        .baud_rate    = NRF_UART_BAUDRATE_115200
+#else
+        .baud_rate    = NRF_UARTE_BAUDRATE_115200
+#endif
+    };
 
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Initializing serial interface...\n");
-    ERROR_CHECK(nrf_mesh_serial_init(NULL));
+    APP_UART_FIFO_INIT(&comm_params,
+                       UART_RX_BUF_SIZE,
+                       UART_TX_BUF_SIZE,
+                       uart_event_handle,
+                       APP_IRQ_PRIORITY_LOWEST,
+                       err_code);
+    APP_ERROR_CHECK(err_code);
 }
 
 static void initialize(void)
 {
+    uart_init();
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_FRIEND, LOG_LEVEL_DBG1, LOG_CALLBACK_DEFAULT);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Server Demo -----\n");
 
@@ -415,9 +444,6 @@ static void start(void)
     }
 
     mesh_app_uuid_print(nrf_mesh_configure_device_uuid_get());
-
-    // Serial enable
-    ERROR_CHECK(nrf_mesh_serial_enable());
 
     /* NRF_MESH_EVT_ENABLED is triggered in the mesh IRQ context after the stack is fully enabled.
      * This event is used to call Model APIs for establishing bindings and publish a model state information. */
