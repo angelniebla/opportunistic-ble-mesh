@@ -351,7 +351,7 @@ static void mesh_init(void)
         /* Check if application stored data is valid, if not clear all data and use default values. */
         status = model_config_file_config_apply();
     }
-
+nrfx_uarte_rx
     switch (status)
     {
         case NRF_ERROR_INVALID_DATA:

@@ -73,6 +73,17 @@
 //modified
 #include "simple_message_common.h"
 #include "simple_on_off_server.h"
+#include "app_uart.h"
+
+#if defined (UART_PRESENT)
+#include "nrf_uart.h"
+#endif
+#if defined (UARTE_PRESENT)
+#include "nrf_uarte.h"
+#endif
+
+#define UART_TX_BUF_SIZE                256                                         /**< UART TX buffer size. */
+#define UART_RX_BUF_SIZE                256                                         /**< UART RX buffer size. */
 
 /*****************************************************************************
  * Definitions
@@ -110,28 +121,35 @@ static void app_gen_onoff_client_transaction_status_cb(access_model_handle_t mod
 static generic_onoff_client_t m_clients[CLIENT_MODEL_INSTANCE_COUNT];
 static bool                   m_device_provisioned;
 
+///////////
+
 //modified
-void send_message (void) 
+void send_message (uint8_t buffer[], uint8_t length) 
 {
     uint32_t status=0;
-    uint8_t buffer[5]={0x48,0x65,0x6C,0x6C,0x6F};
-    uint8_t length;
-    uint16_t address;
+   // uint8_t buffer[5]={0x48,0x65,0x6C,0x6C,0x6F};
+   // uint8_t length;
+   // uint16_t address;
     access_message_tx_t msg;
-    length = sizeof(buffer);
+   // length = sizeof(buffer);
 
     if (length)
     {
       msg.opcode.opcode = simple_message_OPCODE_SEND; //simple_message_OPCODE_SEND ;
       msg.opcode.company_id = 0x0059; // Nordic's company ID
-
+                __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "pre buff\n");
       msg.p_buffer = (const uint8_t *) &buffer[0];
-      msg.length =length;
+      msg.length = length;
+                __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Post buf len %x\n", length);
 
       //forget about setting here the dst addr and set instead on nrf mesh app (now dst is 0x0074)
       //set this node as LPN MESH_FEATURE_LPN_ENABLED 1, dont forget proper configure server (only prov and bind keys)
 
+                __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Pre acc\n");
+
       status = access_model_publish(m_clients[0].model_handle, &msg);        //CHANGED TO 0 FROM 3
+                      __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Post acc\n");
+
       __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Status : %u \n", status);
 
       if (status == NRF_ERROR_INVALID_STATE || status == NRF_ERROR_BUSY || status == NRF_ERROR_NO_MEM)
@@ -144,6 +162,79 @@ void send_message (void)
         ERROR_CHECK(status);
       }
     }
+}
+
+void uart_event_handle(app_uart_evt_t * p_event)
+{
+    static uint8_t data_array[128];
+    static uint8_t index = 0;
+    uint32_t       err_code;
+
+    switch (p_event->evt_type)
+    {
+        case APP_UART_DATA_READY:
+            UNUSED_VARIABLE(app_uart_get(&data_array[index]));
+            index++;
+
+            if (data_array[index - 1] == '\n')
+            {
+                __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Ready to read data and publish message: ");
+                do
+                {
+                    uint16_t length = (uint16_t)index;
+                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "MSG : %s\n", data_array);
+                   // send_message("data", 4);//sizeof(data_array));
+                    if ( (err_code != NRF_ERROR_INVALID_STATE) && (err_code != NRF_ERROR_BUSY) &&
+                         (err_code != NRF_ERROR_NOT_FOUND) )
+                    {
+                        APP_ERROR_CHECK(err_code);
+                    }
+                } while (err_code == NRF_ERROR_BUSY);
+                index = 0;
+            }
+            break;
+
+        case APP_UART_COMMUNICATION_ERROR:
+            APP_ERROR_HANDLER(p_event->data.error_communication);
+            break;
+
+        case APP_UART_FIFO_ERROR:
+            APP_ERROR_HANDLER(p_event->data.error_code);
+            break;
+
+        default:
+            break;
+    }
+}
+
+/**@brief  Function for initializing the UART module.
+ */
+/**@snippet [UART Initialization] */
+static void uart_init(void)
+{
+    uint32_t                     err_code;
+    app_uart_comm_params_t const comm_params =
+    {
+        .rx_pin_no    = RX_PIN_NUMBER,
+        .tx_pin_no    = TX_PIN_NUMBER,
+        .rts_pin_no   = RTS_PIN_NUMBER,
+        .cts_pin_no   = CTS_PIN_NUMBER,
+        .flow_control = APP_UART_FLOW_CONTROL_DISABLED,
+        .use_parity   = false,
+#if defined (UART_PRESENT)
+        .baud_rate    = NRF_UART_BAUDRATE_115200
+#else
+        .baud_rate    = NRF_UARTE_BAUDRATE_115200
+#endif
+    };
+
+    APP_UART_FIFO_INIT(&comm_params,
+                       UART_RX_BUF_SIZE,
+                       UART_TX_BUF_SIZE,
+                       uart_event_handle,
+                       APP_IRQ_PRIORITY_LOWEST,
+                       err_code);
+    APP_ERROR_CHECK(err_code);
 }
 
 const generic_onoff_client_callbacks_t client_cbs =
@@ -303,7 +394,7 @@ static void button_event_handler(uint32_t button_number)
         case 1:
         case 2:
             //modified
-            send_message();
+            send_message("testing", 7);
             break;
 
         case 3:
@@ -402,6 +493,8 @@ static void mesh_init(void)
 
 static void initialize(void)
 {
+    uart_init();
+
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS | LOG_SRC_BEARER, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
 

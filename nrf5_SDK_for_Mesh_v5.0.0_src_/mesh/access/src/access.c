@@ -1199,6 +1199,7 @@ uint32_t access_model_publish(access_model_handle_t handle, const access_message
     uint8_t *p_payload;
 
     status = packet_alloc_and_tx(handle, p_message, NULL, &p_payload, &payload_length);
+
     if (NRF_SUCCESS != status)
     {
         return status;

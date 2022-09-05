@@ -40,8 +40,14 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../doc/getting_started/SES.md" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="357" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="17" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="light_switch_server_nrf52833_xxAA_s113_7_2_0.emProject" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="369" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="429" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="385" y="17" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="359" path="light_switch_server_nrf52833_xxAA_s113_7_2_0.emProject" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="/opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="33" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12878" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="12842" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="247" useTextEdit="1" openedFrom="/opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/integration/nrfx/legacy/nrf_drv_uart.h" useBinaryEdit="0" left="0" path="/opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/modules/nrfx/mdk/nrf52833_peripherals.h" selected="0" top="229" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../common/include/example_common.h" selected="0" top="37" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="41" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="/opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/uart/app_uart_fifo.c" selected="0" top="26" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/ivan/Desktop/opportunistic-ble-mesh/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server/src/main.c" useBinaryEdit="0" left="0" path="/opt/home/otiginal/nRF5_SDK_17.1.0_ddde560/components/libraries/uart/app_uart.h" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="light_switch_server_nrf52833_xxAA_s113_7.2.0" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="light_switch_server_nrf52833_xxAA_s113_7.2.0" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/ivan/Desktop/mesh_custom_msg/nrf5_SDK_for_Mesh_v5.0.0_src_/examples/light_switch/server" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
