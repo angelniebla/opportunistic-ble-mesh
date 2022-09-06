@@ -22,6 +22,7 @@ import (
 
 	logv2 "github.com/ipfs/go-log/v2"
 	//bhost "github.com/libp2p/go-libp2p/p2p/host/basic"
+	"gitlab.com/orballo_project/opportunistic-ble-mesh/libp2p/util"
 )
 
 var kademliaDHT *dht.IpfsDHT
@@ -32,7 +33,7 @@ func (blankValidator) Validate(_ string, _ []byte) error        { return nil }
 func (blankValidator) Select(_ string, _ [][]byte) (int, error) { return 0, nil }
 
 func main() {
-	config, err := ParseFlags()
+	config, err := util.ParseFlags()
 
 	if err != nil {
 		panic(err)
@@ -44,7 +45,7 @@ func main() {
 
 }
 
-func run(config Config) {
+func run(config util.Config) {
 	logv2.SetAllLoggers(logv2.LevelWarn)
 	logv2.SetLogLevel("rendezvous", "info")
 
@@ -125,7 +126,7 @@ func newHost() (host.Host, *dht.IpfsDHT, error) {
 
 }
 
-func connectBootstrap(ddht *dht.IpfsDHT, host host.Host, config Config) string {
+func connectBootstrap(ddht *dht.IpfsDHT, host host.Host, config util.Config) string {
 	// connect to the bootstrap peers
 
 	ma, err := multiaddr.NewMultiaddr(config.BootstrapPeers.String())
