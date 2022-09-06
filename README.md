@@ -73,12 +73,12 @@ node A: publish/subscribe address - virtual group gateways (0xC003)
 
 node B (gateway): subscriber address - virtual gateways group (0xC003)
 ```
-"hello from A - dst 0x0078" <- uart -> node B -> libp2p cache add "hello from A" dst: 0x0078 
+"hello from A - dst 0x0078" <- uart -> node B -> libp2p cache add "hello from A" dst: 0x0078 -> BLE Mesh -> 0x0078
 ```
 
 node C: publish/subscribe address - virtual group gateways (0xC003)
 ```
-get p2p cache 
+"hello from A" <- uart -> node C
 ```
 
 
