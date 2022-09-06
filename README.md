@@ -4,41 +4,42 @@
 
 ## Introduction
 
-This project allows to perform different test beds to evaluate the performance of an opportunistic communications system (named as ORBALLO) based on the BLE Mesh standard with the following modifications in the original protocol.
+The code provided in this project allows for creating different testbeds to evaluate the performance of an Opportunistic Edge Computing (OEC) system based on Bluetooth 5 (specifically, on BLE Mesh) with the following modifications with respect to the original protocol:
 
-1. The friend node has been replaced by a distributed cache via libp2p. 
+1. The friend node has been replaced by a distributed cache via libp2p.
 
-2. Is possible to use specific Bluetooth 5 modulations within the mesh communication. 
+2. It is possible to use specific Bluetooth 5 modulations for mesh communications.
 
-Why this changes?
+Why thess changes?
 
-1. Currently the BLE Mesh protocol has a feature that allows a node (friend) to store the data of a low power node that is inactive for a certain period of time (LPN) when this node wakes up receives the data from the cache of the friend node. 
+1. Currently, the BLE Mesh protocol has a feature that allows a node (called friend node) to store the data of a low-power node (LPN) that is inactive for a certain period of time. When this node wakes up, it receives the data from the cache memory of the friend node. This approach is intended for static nodes (for example, sensors or actuators in a building), so when an LPN is not within range of the friend node that has stored its cache, such a cache is lost.
 
-    This approach is intended for static nodes (sensors or actuators in a building for example) and when an LPN is not in range with the friend node that has stored its cache, the cache is lost.
+    In an opportunistic system the nodes will be in movement, therefore the cache must be distributed among the different nodes of the mesh. In this situation, libp2p provides a good solution.
 
-    In an opportunistic system the nodes will be in movement and therefore the cache must be distributed among the different nodes of the mesh, libp2p provides a solution to this problem. 
 
-2. The BLE Mesh protocol uses Bluetooth 4.x standard so it does not officially support any Bluetooth 5 modulation in the transmission, however since the standard is open source it can be modified and with hardware that supports Bluetooth 5 it is possible to use these modulations to obtain certain benefits in the communication in specific scenarios, specifically Bluetooth 5 adds two major modulations, one for long range (Coded) and one for high bandwidth (2M).
+2. The BLE Mesh protocol uses the Bluetooth 4.x standard, so it does not officially support any Bluetooth 5 modulation for data transmission. However, since the standard is open source, it can be modified and, with hardware that supports Bluetooth 5, it is possible to make use of the Bluetooth 5 modulations to obtain certain benefits in specific scenarios. Specifically, Bluetooth 5 adds two major modulations: one for long range communications (LE Coded) and one for high bandwidth data exchanges (2M).
 
-When are these modulation changes relevant?
+When are these modulation changes useful?
 
-- Coded: for nodes located far away from each other or in harsh enviroments without intensive data transfer requirements
+- LE Coded: for nodes located far away from each other or in harsh environments that do not require intensive data transfers.
 
-- 2M: for nodes in close range with high bandwidth demand (transmission of video or photos for instance)
+- 2M: for nodes that communicate at short ranges and with high bandwidth demands (for instance, for transmitting video or photos).
 
 When is it counterproductive to use these modulations?
 
-- Coded: when there are many nodes in range or the transfer rates are high. It must be taken into account that for increasing the range the datarate is reduced to 125 kbps and the time on air of the frame increases by 8x and too much use of the channels would lead to a saturation of the communication. 
+- LE Coded: when there are many nodes in range or when transfer rates need to be high. It must be taken into account that in order to increase the communications range, the data rate is reduced to 125 kbps and the time on air of the frame increases by 8x, so the wireless media is occupied more time, which can lead to its saturation. 
 
-- 2M: when communications are unreliable or have high bit error rate, considering that for this modulation the sensitivity is reduced, also are not suitable for very small messages 
+- 2M: when communications are unreliable or have a high bit error rate. It is important to consider that the use of this modulation reduces sensitivity and that it is not suitable for sending very small messages.
 
 ## Requirements
 
-The hardware has been coded using the Nordic Semiconductors SDK. At least 3 boards with an nrf5x based SoC that can be coded using this SDK are required, if you want to test a specific Bluetooth 5 modulation (not mandatory) the best option are boards based on the nrf52840 or nrf52833 microprocessors.
+The developed firmware has been implemented using the Nordic Semiconductors SDK. At least 3 boards with a nrf5x based SoC that can be programmed using the mentioned SDK are required. If you want to test a specific Bluetooth 5 modulation (not mandatory), the best option are boards based on the nrf52840 or nrf52833.
 
-Porting the libp2p code to an nrf5x based board is not a viable solution in the short term and since the mesh nodes working as relays need a continuous power supply, a Raspebrry Pi was used with one of the Bluetooth SoCs connected to the serial port, any ARM device with serial connection that can be programmed in golang is also valid.
+Since porting the libp2p code to an nrf5x based board is not a viable solution in the short term and because of the mesh nodes working as relays need a continuous power supply, a Raspberry Pi was used with one of the Bluetooth SoCs connected to its serial port (any ARM device with a serial connection that can be programmed in golang is also valid).
 
-In order to provisionate and configure nodes within the Mesh the best option is to use the nordic nRF Mesh [app](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfmeshprovisioner&gl=US) 
+In order to provision and to configure the nodes within the Mesh, the best option is to use the nordic nRF Mesh [app](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfmeshprovisioner&gl=US) 
+
+Useful links:
 
 - [Nordic SDK](https://www.nordicsemi.com/Products/Development-software/nrf5-sdk/download)
 - [SDK for Mesh](https://www.nordicsemi.com/Products/Development-software/nRF5-SDK-for-Mesh)
@@ -46,21 +47,22 @@ In order to provisionate and configure nodes within the Mesh the best option is 
 
 ## Installation
 
-Divided in several stages, the first one consists in flashing the nordic sdk firmware needed in each board, in this case the light_switch example of the nordic mesh sdk was adapted, two nodes will work as client (LPN) and one as server, the server node will also work as relay and friend node of the two LPN, this node needs to have go-libp2p installed.
+The installation is divided into several stages. The first one consists in flashing the Nordic SDK firmware needed into each board. In this case, the light_switch example of the Nordic mesh SDK was adapted. Two nodes will work as clients (LPNs) and one as server. The server node will also work as relay and friend node of the two LPNs. Such a server node needs to have go-libp2p installed.
 
-For the nordic firmware, the project includes the two nordic SDKs needed to compile the software and generate the firmware of the boards, it is necessary to have installed the SEGGER Embedded Studio IDE or a similar tool.
+For the Nordic firmware, the project includes the two Nordic SDKs needed to compile the software and to generate the firmware of the boards. It is necessary to install the SEGGER Embedded Studio IDE or a similar tool.
 
-In the case of go-libp2p it is necessary to have the golang compiler at least version 1.16.
+In the case of go-libp2p, it is necessary to have the golang compiler (at least with version 1.16).
 
-To provision the nodes inside the mesh it is necessary to use a smartphone with BLE and the nordic nRF Mesh app.
+To provision the nodes that will belong to the mesh, it is necessary to use a smartphone with BLE support and the Nordic nRF Mesh app.
+
 
 ## Usage
 
-Open in Segger IDE the projects light_switch client and server, build and run on the selected boards, then it is necessary to provision with the app all the nodes, for the client nodes once provisioned it is necessary to configure the "Generic On/Off Client" element binding an application key and defining a publishing address that can be the unicast address of the server node or a group address. 
+Open in Segger IDE the projects light_switch client and server, and build and run on the selected boards. Then, it is necessary to provision all the nodes with the app. For the client nodes, once provisioned, it is necessary to configure the "Generic On/Off Client" element binding an application key and defining a publishing address that can be the unicast address of the server node or a group address.
 
-In the same way the "Generic On/Off Server" server node element is configured, if the unicast address of the server is used in the client it is not necessary to configure a subscription address.
+In the same way, the "Generic On/Off Server" server node element is configured, if the unicast address of the server is used in the client, it is not necessary to configure a subscription address.
 
-The behavior of these nodes is as follows: the client nodes publish a message in ASCII (payload) to the addresses to which they are subscribed through the serial port with a destination address, then this is redirected through the relay to the destination node. 
+The behavior of these nodes is as follows: the client nodes publish a message in ASCII (payload) to the addresses to which they are subscribed through the serial port with a destination address. Then, the message will be redirected through the relay to the destination node.
 
 Example.
 
@@ -80,8 +82,36 @@ node C: publish/subscribe address - virtual group gateways (0xC003)
 ```
 "hello from A" <- uart -> node C
 ```
+In the repository, there are two types of tests:
 
+- The “load_test” is made up of “generate-nodes”. When the code is executed, it adds 100 nodes to the network. “node-load” generates a node that repeats the process of connecting to the network 50 times, discovering the rest of nodes and saving a value in a decentralized way in the DHT.
+
+- The “latency_test” is composed of two gateways (chat-gatewayA, chat-gatewayB), a relay node (chat-node-relay) and an IoT node (chat-node). To carry out this test, the relay node must be executed on a IP-capable machine. The output of the execution will return an IP together with the peerID that we must add in the “utils” directory in the following line:
+
+```
+config.BootstrapPeers.Set("/ip4/x.x.x.x/tcp/<port>/p2p/<PeerID>")
+``` 
+
+Next, we must execute the code of the gateways, one for each SBC device, where we have previously flashed the Nordic nRF Mesh app code. Finally, we must execute the code of the IoT nodes in other SBC devices, also with the Nordic nRF code Mesh app flashed. For both nodes to communicate, the unicast address of the destination node must be modified in the "chat-node" code of the sending node, in the following line:
+
+```
+sendData := "chat private <GatewayID> #" + "PACK:" + strconv.Itoa(int(i)) + "(<NodeDestID>)" + "@ \n"
+```
+
+Where the <GatewayID> has to be the address of "chat-GatewayA" and the <NodeDestID> has to be the address of the IoT node that has to receive the data. From the execution, a loop of 1000 iterations will be executed, where the emitting node will send a message to the destination node.
 
 ## Contributing
 
 Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO) is a project funded by Ministerio de Ciencia e Innovación through grant PID2020-118857RA-I00.
+
+## License
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
