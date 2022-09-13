@@ -1,6 +1,6 @@
 # Opportunistic BLE Mesh (testbed scenarios)
 
-
+The code of this repository has been used for performing the experiments of the following papers: "A Bluetooth 5 Opportunistic Edge Computing System for Vehicular Scenarios" (submited to ECSA-9), "Practical Latency Analysis of a Bluetooth 5 Decentralized IoT Opportunistic Edge Computing System for Low-Cost SBCs" (submited to Sensors). You can find in such papers further information on the experiments and on the proposed opportunistic architectures.
 
 ## Introduction
 
@@ -10,7 +10,7 @@ The code provided in this project allows for creating different testbeds to eval
 
 2. It is possible to use specific Bluetooth 5 modulations for mesh communications.
 
-Why thess changes?
+Why theses changes?
 
 1. Currently, the BLE Mesh protocol has a feature that allows a node (called friend node) to store the data of a low-power node (LPN) that is inactive for a certain period of time. When this node wakes up, it receives the data from the cache memory of the friend node. This approach is intended for static nodes (for example, sensors or actuators in a building), so when an LPN is not within range of the friend node that has stored its cache, such a cache is lost.
 
