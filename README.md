@@ -160,7 +160,7 @@ The message is send by:  0x0061 and is send to:  0x0071
 
 ## Funding
 
-Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO) is a project funded by Ministerio de Ciencia e Innovación through grant PID2020-118857RA-I00.
+The development made in this repository is funded by Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO), a project funded by Ministerio de Ciencia e Innovación through grant PID2020-118857RA-I00.
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
