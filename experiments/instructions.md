@@ -37,11 +37,17 @@ After that provisionate both boards as described in the main README and the Blue
 
 Steps to be performed:
 1 - Execute the script “chat-node-relay” located under folder “/libp2p/latency_test/chat_node_relay/” associated to the source file “chat.go”.
+
 Run this script and copy the multiaddr and put it inside utils.go as it is also mentioned in the README of the project, this is used as the start the bootstrap node that will function as relay.
+
 It is also possible to check how latency is affected by multiple connections to the swarm in the case of an end-to-end communication.
+
 2 - In order to test this feature, execute the script “generates-nodes” located in folder “/libp2p/load_test/generate-nodes” associated to the source file “test.go” in the bootstrap node. Remember that this example will create 100 nodes connected to the swarm. In order to test with different values, it can be easily changed   in line 69 and compiled again with “go build -o generates-nodes”.    
+
 3 - On a local host launch chat-gatewayA script (connect to bootstrap multiaddr) and chat-node script (under /libp2p/latency_test)
 Now on the edge host (called as A). execute the script “chat-gatewayA” under “/libp2p/latency_test/chat-gatewayA” associated to the source file “chat.go” and the chat-node script under /libp2p/latency_test/chat_node associated to the source file “chat.go”.
+
 4 - On another host launch chat-gatewayB script (connect to bootstrap multiaddr) and chat-node script (under /libp2p/latency_test)
 Now on the other edge host (called as B), execute the script “chat-gatewayB” under “/libp2p/latency_test/chat-gatewayB” associated to the source file “chat.go” and the chat-node script under /libp2p/latency_test/chat_node associated to the source file “chat.go”.
+
 5 - Start sending messages between end-device nodes
