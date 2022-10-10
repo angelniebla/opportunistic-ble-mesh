@@ -158,6 +158,8 @@ The message is send by:  0x0061
 The message is send by:  0x0061 and is send to:  0x0071
 ```
 
+The experiments folder contains a text file with detailed instructions on the different experiments carried out in the article.
+
 ## Funding
 
 The development made in this repository is funded by Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO), a project funded by Ministerio de Ciencia e Innovación through grant PID2020-118857RA-I00.
