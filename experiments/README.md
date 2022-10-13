@@ -11,7 +11,7 @@ The hardware involved to perform these experiments is as follows.
 
 - Experiment 1: a host in local/edge (Raspberry Pi 3 was used) and a host in a cloud.
 - Experiment 2: a host in local/edge (Raspberry Pi Zero was used) and a host in a cloud.
-- Experiment 3: two nrf5x boards, a host in local/edge (Raspberry Pi 3 was used) and a host in a cloud.
+- Experiment 3: two nrf5x boards, a host in local/edge (Raspberry Pi 3 was used), another host in local/edge and a host in a cloud.
 - Experiment 4: a host in local/edge (Raspberry Pi 3 was used) and a host in a cloud.
 
 ## Structure of the experiments
