@@ -162,7 +162,7 @@ The experiments folder contains a text file with detailed instructions on the di
 
 ## Funding
 
-The developments presented in this repository have been funded by Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO), a project funded by Ministerio de Ciencia e Innovación through grant PID2020-118857RA-I00.
+The development presented in this repository have been funded by Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO), Grant PID2020-118857RA-I00, funded by MCIN and AEI (10.13039/501100011033).
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
