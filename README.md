@@ -2,22 +2,6 @@
 
 The code of this repository has been used for performing the experiments of the following papers: "A Bluetooth 5 Opportunistic Edge Computing System for Vehicular Scenarios" (accepted in the 9th International Electronic Conference on Sensors and Applications (ECSA-9)), "Practical Latency Analysis of a Bluetooth 5 Decentralized IoT Opportunistic Edge Computing System for Low-Cost SBCs" (submited to Sensors). You can find in such papers further information on the experiments and on the proposed opportunistic architectures.
 
-If you use the code of this repository, please cite us as follows:
-```
-@misc{orballo1,
-  title={Practical Latency Analysis of a Bluetooth 5 Decentralized IoT Opportunistic Edge Computing System for Low-Cost SBCs},
-  author={Niebla-Montero, Ángel and Froíz-Míguez, Iván and Fraga-Lamas, Paula and Fernández-Caramés, Tiago M.},
-  howpublished={sensors},
-  year={2022}
-}
-
-@misc{orballo2,
-  title={A Bluetooth 5 Opportunistic Edge Computing System for Vehicular Scenarios},
-  author={Niebla-Montero, Ángel and Froíz-Míguez, Iván and Fraga-Lamas, Paula and Fernández-Caramés, Tiago M.},
-  howpublished={ECSA-9},
-  year={2022}
-}
-```
 
 ## Introduction
 
