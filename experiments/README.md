@@ -1,6 +1,6 @@
 ## Introduction
 
-The following instructions describe how to replicate the experiments carried out in the article "Practical Latency Analysis of a Bluetooth 5 Decentralized IoT Opportunistic Edge Computing System for Low-Cost SBCs". In such an article, 4 different types of experiments were performed:
+The following instructions describe how to replicate the experiments carried out:
 
 - Experiment 1, Section 4.2 - Latency when running the bootstrap node on the edge and on the cloud.
 - Experiment 2, Section 4.3 - IoT OEC device performance with different hardware.
