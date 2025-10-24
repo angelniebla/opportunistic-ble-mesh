@@ -1,7 +1,5 @@
 # Opportunistic BLE Mesh (testbed scenarios)
 
-The code of this repository has been used for performing the experiments of the following papers: "A Bluetooth 5 Opportunistic Edge Computing System for Vehicular Scenarios" (accepted in the 9th International Electronic Conference on Sensors and Applications (ECSA-9)), "Practical Latency Analysis of a Bluetooth 5 Decentralized IoT Opportunistic Edge Computing System for Low-Cost SBCs" (submited to Sensors). You can find in such papers further information on the experiments and on the proposed opportunistic architectures.
-
 
 ## Introduction
 
@@ -143,10 +141,6 @@ The message is send by:  0x0061 and is send to:  0x0071
 ```
 
 The experiments folder contains a text file with detailed instructions on the different experiments carried out in the article.
-
-## Funding
-
-The development presented in this repository have been funded by Opportunistic Edge Computing Based on Mobile and Low-Power IoT Devices (ORBALLO), Grant PID2020-118857RA-I00, funded by MCIN and AEI (10.13039/501100011033).
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
